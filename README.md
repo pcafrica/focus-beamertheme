@@ -8,12 +8,12 @@ Demo
 ----
 A full demo is available. Refer to `demo.tex` and `demo.pdf`.
 
-![](https://github.com/elauksap/focustheme/blob/master/demo/demo-titlepage.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo/demo-sectionpage.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo/demo-typeset.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo/demo-focus.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo/demo-references.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo/demo-appendix.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-titlepage.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-sectionpage.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-typeset.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-focus.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-references.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-appendix.jpg)
 
 Download
 ========
@@ -44,7 +44,7 @@ For example:
 ```
 produces the following ice-blue color theme.
 
-![](https://github.com/elauksap/focustheme/blob/master/demo/demo-color.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-color.jpg)
 
 Customize the footline
 ----------------------
