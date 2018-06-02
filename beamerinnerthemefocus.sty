@@ -64,19 +64,23 @@
         \inserttitlegraphic
     }
     
-    \begin{minipage}[t][0.15\paperheight]{\textwidth}
+    \begin{minipage}[t]{\textwidth}
         \usebeamerfont{author}
         \insertauthor
     \end{minipage}
-
-    \begin{minipage}[t][0.15\paperheight]{\textwidth}
+    
+    \vspace*{\baselineskip}
+    \begin{minipage}[t]{\textwidth}
         \usebeamerfont{institute}
         \insertinstitute
     \end{minipage}
     
-    \begin{minipage}[t][0.25\paperheight]{\textwidth}
+    \vspace*{\baselineskip}
+    \begin{minipage}[t]{\textwidth}
         \usebeamerfont{date}{\insertdate}
     \end{minipage}
+    
+    \vspace*{5\baselineskip}
     
     \addtocounter{framenumber}{-1}
 }
