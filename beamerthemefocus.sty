@@ -1,0 +1,53 @@
+% Copyright (C) 2018 Pasquale Claudio Africa.
+%
+% This file is part of beamerthemefocus.
+%
+% beamerthemefocusis free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+% 
+% beamerthemefocus is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public License
+% along with beamerthemefocus. If not, see <http://www.gnu.org/licenses/>.
+
+\mode<presentation>
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{FiraSans}
+
+\RequirePackage{tikz}
+
+\RequirePackage{etoolbox} % \BeforeBeginEnvironment
+\RequirePackage{appendixnumberbeamer} % Don't number appendix frames.
+
+
+\DeclareOptionBeamer{numbering}{
+    \PassOptionsToPackage{numbering=#1}{beamerouterthemefocus}
+}
+\ProcessOptionsBeamer
+
+\usecolortheme{focus}
+\usefonttheme{focus}
+\useinnertheme{focus}
+\useoutertheme{focus}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[default]
+
+\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{subsection in toc}[square]
+
+\setbeamertemplate{itemize items}[square]
+\setbeamertemplate{itemize subitem}[triangle]
+
+% Set margins.
+\setbeamersize{text margin left=0.75cm, text margin right=0.75cm}
+\setlength{\leftmargini}{0.75cm}
+%\leftmarginii=0.75\leftmargini\relax
+
+\mode<all>

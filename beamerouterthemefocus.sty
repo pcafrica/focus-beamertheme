@@ -1,0 +1,206 @@
+% Copyright (C) 2018 Pasquale Claudio Africa.
+%
+% This file is part of beamerthemefocus.
+%
+% beamerthemefocusis free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+% 
+% beamerthemefocus is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public License
+% along with beamerthemefocus. If not, see <http://www.gnu.org/licenses/>.
+
+\mode<presentation>
+
+% Main header.
+\defbeamertemplate*{frametitle}{focus}
+{
+    % If not title page.
+    \ifnum\c@framenumber>0
+        \begin{tikzpicture}[overlay, remember picture]
+            \fill[color=main] (current page.north west) rectangle ([shift = {(0, -1cm)}] current page.north east);
+            \node at ([shift = {(0.6cm, -0.5cm)}] current page.north west) [anchor = west, inner sep = 0pt]
+            {
+                \usebeamerfont{frametitle}
+                \usebeamercolor[fg]{frametitle}
+                \insertframetitle
+            };
+        \end{tikzpicture}
+   \fi
+}
+
+% Plain header.
+\defbeamertemplate{frametitle}{plain}
+{
+    % If not title page.
+    \ifnum\c@framenumber>0
+        \begin{tikzpicture}[overlay, remember picture]
+            \fill[opacity=0] (current page.north west) rectangle ([shift = {(0, -1cm)}] current page.north east);
+            \node at ([shift = {(0.6cm, -0.5cm)}] current page.north west) [anchor = west, inner sep = 0pt] {};
+        \end{tikzpicture}
+    \fi
+}
+
+% Progress bar footline.
+\newlength{\footlineheight} % Progress bar height.
+
+\defbeamertemplate*{footline}{progressbar}
+{
+    % If not appendix.
+    \ifnum\mainend<0 % From package appendixnumberbeamer.
+        % If not title page.
+        \ifnum\c@framenumber>0
+            \ifnum\c@framenumber<\inserttotalframenumber
+                \begin{tikzpicture}[overlay, remember picture]
+                    \pgfmathsetmacro{\progress}{\insertframenumber/\inserttotalframenumber * 0.875 * \paperwidth}
+                    % Current frame number.
+                    \fill[color=main] (current page.south west) rectangle ([shift = {(\progress pt + 0.5cm, \footlineheight)}] current page.south west);
+                    \node at ([shift = {(\progress pt + 0.25cm, 0.5\footlineheight)}] current page.south west) [anchor = east, inner sep = 0pt]
+                    {
+                        \usebeamerfont{footer}
+                        \usebeamercolor[fg]{frametitle}
+                        \vphantom{\strut/\strut}\insertframenumber
+                    };
+                    
+                    % Total frame number.
+                    \fill[color=main] ([shift = {(-1cm, 0cm)}] current page.south east) rectangle ([shift = {(0, \footlineheight)}] current page.south east);
+                    \node at ([shift = {(-0.4cm, 0.5\footlineheight)}] current page.south east) [anchor = east, inner sep = 0pt]
+                    {
+                        \usebeamerfont{footer}
+                        \usebeamercolor[fg]{frametitle}
+                        \vphantom{\strut/\strut}\inserttotalframenumber
+                    };
+                \end{tikzpicture}
+            \else
+                \begin{tikzpicture}[overlay, remember picture]
+                    \fill[color=main] (current page.south west) rectangle ([shift = {(0, \footlineheight)}] current page.south east);
+                    \node at ([shift = {(-0.4cm, 0.5\footlineheight)}] current page.south east) [anchor = east, inner sep = 0pt]
+                    {
+                        \usebeamerfont{footer}
+                        \usebeamercolor[fg]{frametitle}
+                        \insertframenumber\ \strut/\strut\ \inserttotalframenumber
+                    };
+                \end{tikzpicture}
+            \fi
+        \fi
+    \fi
+}
+
+% Full bar footline.
+\defbeamertemplate{footline}{fullbar}
+{
+    % If not appendix.
+    \ifnum\mainend<0 % From package appendixnumberbeamer.
+        % If not title page.
+        \ifnum\c@framenumber>0
+            \begin{tikzpicture}[overlay, remember picture]
+                \fill[color=main] (current page.south west) rectangle ([shift = {(0, \footlineheight)}] current page.south east);
+                \node at ([shift = {(-0.4cm, 0.5\footlineheight)}] current page.south east) [anchor = east, inner sep = 0pt]
+                {
+                    \usebeamerfont{footer}
+                    \usebeamercolor[fg]{frametitle}
+                    \insertframenumber\ \strut/\strut\ \inserttotalframenumber
+                };
+            \end{tikzpicture}
+        \fi
+    \fi
+}
+
+% Empty footline.
+\defbeamertemplate{footline}{none}{}
+
+\DeclareOptionBeamer{numbering}{\def\beamer@focus@numbering{#1}}
+\ExecuteOptionsBeamer{numbering=progressbar}
+\ProcessOptionsBeamer
+
+\def\beamer@focus@numberingprogressbar{progressbar}
+\def\beamer@focus@numberingfullbar{fullbar}
+\def\beamer@focus@numberingnone{none}
+
+% Default style.
+\BeforeBeginEnvironment{frame}{
+    \setbeamertemplate{background}[focus]
+    \setbeamertemplate{frametitle}[focus]
+    
+    % Reset footline height and determine it for the current slide.
+    \setlength{\footlineheight}{0cm}
+    
+    % If not appendix.
+    \ifnum\mainend<0 % From package appendixnumberbeamer.
+        \ifx\beamer@focus@numbering\beamer@focus@numberingprogressbar
+            \setlength{\footlineheight}{0.4cm}
+            \setbeamertemplate{footline}[progressbar]
+        \else
+            \ifx\beamer@focus@numbering\beamer@focus@numberingfullbar
+                \setlength{\footlineheight}{0.4cm}
+                \setbeamertemplate{footline}[fullbar]
+            \fi
+        \fi
+    \fi
+}
+
+% Enable noframenumbering option.
+\makeatletter
+\define@key{beamerframe}{noframenumbering}[true]{
+    \setbeamertemplate{footline}[none]
+    \setlength{\footlineheight}{0cm}
+    
+    \addtocounter{framenumber}{-1}
+}
+\makeatother
+
+% Enable plain option.
+\makeatletter
+\define@key{beamerframe}{plain}[true]{
+    \setbeamertemplate{background}{}
+    \setbeamertemplate{frametitle}[plain]
+    
+    \setbeamertemplate{footline}[none]
+    \setlength{\footlineheight}{0cm}
+}
+\makeatother
+
+% Full vertical centering
+% (from https://tex.stackexchange.com/questions/247826/beamer-full-vertical-centering).
+\makeatletter
+\define@key{beamerframe}{c}[true]{
+    \beamer@frametopskip=0pt plus 1fill\relax
+    \beamer@framebottomskip=0pt plus 1fill\relax
+    \beamer@frametopskipautobreak=0pt plus .4\paperheight\relax
+    \beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax
+    \def\beamer@initfirstlineunskip{}
+}
+\makeatother
+
+% Enable focus option.
+\makeatletter
+\providebool{focus@standout}
+\define@key{beamerframe}{focus}[true]{
+    \booltrue{focus@standout}
+    \begingroup
+        \setkeys{beamerframe}{noframenumbering}
+        \setbeamertemplate{background}[focusframe]
+        \setbeamertemplate{frametitle}[plain]
+        
+        \setkeys{beamerframe}{c}
+        \centering
+        \usebeamerfont{focusframe}
+        \usebeamercolor[fg]{frametitle}
+}
+
+\apptocmd{\beamer@reseteecodes}
+{
+    \ifbool{focus@standout}
+    {
+        \endgroup
+        \boolfalse{focus@standout}
+    }{}
+}{}{}
+\makeatother
+
+\mode<all>

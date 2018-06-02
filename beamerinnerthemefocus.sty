@@ -1,0 +1,123 @@
+% Copyright (C) 2018 Pasquale Claudio Africa.
+%
+% This file is part of beamerthemefocus.
+%
+% beamerthemefocusis free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+% 
+% beamerthemefocus is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public License
+% along with beamerthemefocus. If not, see <http://www.gnu.org/licenses/>.
+
+\mode<presentation>
+
+% Main background.
+\defbeamertemplate*{background}{focus}{
+    % Titlepage.
+    \ifnum\c@framenumber=0
+        \begin{tikzpicture}[overlay, remember picture]
+            \fill[color=background] (current page.north west) rectangle (current page.south east);
+        \end{tikzpicture}
+    \fi
+}
+
+% Focus frame background.
+\defbeamertemplate{background}{focusframe}{
+    \ifnum\c@framenumber>0
+        \begin{tikzpicture}[overlay, remember picture]
+            \fill[color=main] (current page.north west) rectangle (current page.south east);
+        \end{tikzpicture}
+    \fi
+}
+
+% Title page.
+\defbeamertemplate*{title page}{focus}[1][]
+{
+    \begin{tikzpicture}[overlay, remember picture]
+        \fill[color=main] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
+    \end{tikzpicture}
+    
+    \vspace{-1.65\baselineskip}
+    \begin{minipage}[b][0.35\paperheight]{\textwidth}
+        \vspace{\baselineskip}
+        \usebeamerfont{title}
+        \usebeamercolor[fg]{frametitle}
+        \inserttitle
+    \end{minipage}
+    
+    \begin{minipage}[t][0.1\paperheight]{\textwidth}
+        \usebeamerfont{subtitle}
+        \usebeamercolor[fg]{frametitle}
+        \insertsubtitle
+    \end{minipage}
+    
+    % Set the title graphic in a zero-height box, so that
+    % the position of other elements is not affected.
+    \vbox to 0pt {
+        \raggedleft
+        \inserttitlegraphic
+    }
+    
+    \begin{minipage}[t][0.15\paperheight]{\textwidth}
+        \usebeamerfont{author}
+        \insertauthor
+    \end{minipage}
+
+    \begin{minipage}[t][0.15\paperheight]{\textwidth}
+        \usebeamerfont{institute}
+        \insertinstitute
+    \end{minipage}
+    
+    \begin{minipage}[t][0.25\paperheight]{\textwidth}
+        \usebeamerfont{date}{\insertdate}
+    \end{minipage}
+    
+    \addtocounter{framenumber}{-1}
+}
+
+% Section page.
+\defbeamertemplate*{section page}{focus}{
+    \begin{tikzpicture}[overlay, remember picture]
+        \fill[color=main] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
+    \end{tikzpicture}
+    
+    \vspace{-2\baselineskip}
+    \begin{minipage}[b][0.45\paperheight]{\textwidth}
+        \usebeamerfont{sectiontitle}
+        \usebeamercolor[fg]{frametitle}
+        \let\hyperlink\@secondoftwo\insertsection
+    \end{minipage}
+    
+    \begin{minipage}[t][0.55\paperheight]{\textwidth}
+    \end{minipage}
+}
+\setbeamertemplate{section page}[focus]
+
+\AtBeginSection{
+    \begin{frame}[plain, noframenumbering]{}
+        \sectionpage
+    \end{frame}
+}
+
+% Shift footnotes to prevent overlap with footline.
+\addtobeamertemplate{footnote}
+{\ifnum\footlineheight>0\vspace{-0.55\footlineheight}\fi}
+{\ifnum\footlineheight>0\vspace{0.55\footlineheight}\fi}
+
+\renewcommand*{\footnoterule}
+{
+    \kern -3pt
+    \hrule width 2in height 0.4pt
+    \ifnum\footlineheight>0
+        \kern 0.55\footlineheight
+    \fi
+    \kern 2.6pt
+}
+
+\mode<all>

@@ -1,0 +1,114 @@
+% Full instructions available at:
+% https://github.com/elauksap/beamerthemefocus
+
+\documentclass{beamer}
+\usetheme{focus}
+
+\title{Focus: \\ A Minimalist Beamer Theme}
+\subtitle{Subtitle}
+\author{Author 1 \\ Author 2}
+\titlegraphic{\includegraphics[scale=1.25]{focuslogo.png}}
+\institute{Institute Name \\ Institute Address}
+\date{dd mm yyyy}
+
+\begin{document}
+    \begin{frame}
+        \maketitle
+    \end{frame}
+    
+    \section{Section 1}
+    \begin{frame}{Simple frame}
+        This is a simple frame.
+    \end{frame}
+
+    \begin{frame}[plain]{Plain frame}
+        This is a frame with plain style and it is numbered.
+    \end{frame}
+    
+    \begin{frame}[t]
+        This frame has an empty title and is aligned to top.
+    \end{frame}
+    
+    \begin{frame}[noframenumbering]{No frame numbering}
+        This frame is not numbered and is citing reference \cite{knuth74}.
+    \end{frame}
+    
+    \begin{frame}{Typesetting and Math}
+        The packages \texttt{inputenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
+        \vfill
+        This theme provides styling commands to typeset \emph{emphasized}, \alert{alerted}, \textbf{bold}, \textcolor{example}{example text}, \dots
+        \vfill
+        \texttt{FiraSans} also provides support for mathematical symbols:
+        \begin{equation*}
+            e^{i\pi} + 1 = 0.
+        \end{equation*}
+    \end{frame}
+
+    \section{Section 2}
+    \begin{frame}{Blocks}
+        \begin{block}{Block}
+            Text.
+        \end{block}
+        \pause
+        \begin{alertblock}{Alert block}
+            Alert \alert{text}.
+        \end{alertblock}
+        \pause
+        \begin{exampleblock}{Example block}
+            Example \textcolor{example}{text}.
+        \end{exampleblock}
+    \end{frame}
+    
+    \begin{frame}{Lists}
+        \begin{columns}[t, onlytextwidth]
+            \column{0.33\textwidth}
+                Items:
+                \begin{itemize}
+                    \item Item 1
+                    \begin{itemize}
+                        \item Subitem 1.1
+                        \item Subitem 1.2
+                    \end{itemize}
+                    \item Item 2
+                    \item Item 3
+                \end{itemize}
+            
+            \column{0.33\textwidth}
+                Enumerations:
+                \begin{enumerate}
+                    \item First
+                    \item Second
+                    \begin{enumerate}
+                        \item Sub-first
+                        \item Sub-second
+                    \end{enumerate}
+                    \item Third
+                \end{enumerate}
+            
+            \column{0.33\textwidth}
+                Descriptions:
+                \begin{description}
+                    \item[First] Yes.
+                    \item[Second] No.
+                \end{description}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[focus]
+        Thanks for using \textbf{Focus}!
+    \end{frame}
+    
+    \appendix
+    \begin{frame}{References}
+        \nocite{*}
+        \bibliography{demo_bibliography}
+        \bibliographystyle{plain}
+    \end{frame}
+    
+    \begin{frame}{Backup frame}
+        \usebeamercolor[fg]{normal text}
+        This is a backup frame, useful to include additional material for questions from the audience.
+        \vfill
+        The package \texttt{appendixnumberbeamer} is used not to number appendix frames.
+    \end{frame}
+\end{document}
