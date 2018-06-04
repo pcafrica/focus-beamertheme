@@ -57,10 +57,10 @@
         \ifnum\c@framenumber>0
             \ifnum\c@framenumber<\inserttotalframenumber
                 \begin{tikzpicture}[overlay, remember picture]
-                    \pgfmathsetmacro{\progress}{\insertframenumber/\inserttotalframenumber * 0.875 * \paperwidth}
+                    \pgfmathsetmacro{\progress}{(\insertframenumber-1)/\inserttotalframenumber * \textwidth}
                     % Current frame number.
-                    \fill[color=main] (current page.south west) rectangle ([shift = {(\progress pt + 0.5cm, \footlineheight)}] current page.south west);
-                    \node at ([shift = {(\progress pt + 0.25cm, 0.5\footlineheight)}] current page.south west) [anchor = east, inner sep = 0pt]
+                    \fill[color=main] (current page.south west) rectangle ([shift = {(\progress pt + \beamer@leftmargin, \footlineheight)}] current page.south west);
+                    \node at ([shift = {(\progress pt + \beamer@leftmargin, 0.5\footlineheight)}] current page.south west) [anchor = east, inner sep = 0pt]
                     {
                         \usebeamerfont{footer}
                         \usebeamercolor[fg]{frametitle}
@@ -68,8 +68,8 @@
                     };
                     
                     % Total frame number.
-                    \fill[color=main] ([shift = {(-1cm, 0cm)}] current page.south east) rectangle ([shift = {(0, \footlineheight)}] current page.south east);
-                    \node at ([shift = {(-0.4cm, 0.5\footlineheight)}] current page.south east) [anchor = east, inner sep = 0pt]
+                    \fill[color=main] ([shift = {(-\beamer@rightmargin, \footlineheight)}] current page.south east) rectangle ([shift = {(0, 0)}] current page.south east);
+                    \node at ([shift = {(-\beamer@rightmargin, 0.5\footlineheight)}] current page.south east) [anchor = west, inner sep = 0pt]
                     {
                         \usebeamerfont{footer}
                         \usebeamercolor[fg]{frametitle}
@@ -79,11 +79,19 @@
             \else
                 \begin{tikzpicture}[overlay, remember picture]
                     \fill[color=main] (current page.south west) rectangle ([shift = {(0, \footlineheight)}] current page.south east);
-                    \node at ([shift = {(-0.4cm, 0.5\footlineheight)}] current page.south east) [anchor = east, inner sep = 0pt]
+                    % At left of \beamer@rightmargin.
+                    \node at ([shift = {(-\beamer@rightmargin, 0.5\footlineheight)}] current page.south east) [anchor = east, inner sep = 0pt]
                     {
                         \usebeamerfont{footer}
                         \usebeamercolor[fg]{frametitle}
-                        \insertframenumber\ \strut/\strut\ \inserttotalframenumber
+                        \insertframenumber\ \strut/\strut\ 
+                    };
+                    % At right of \beamer@rightmargin.
+                    \node at ([shift = {(-\beamer@rightmargin, 0.5\footlineheight)}] current page.south east) [anchor = west, inner sep = 0pt]
+                    {
+                        \usebeamerfont{footer}
+                        \usebeamercolor[fg]{frametitle}
+                        \vphantom{\strut/\strut}\inserttotalframenumber
                     };
                 \end{tikzpicture}
             \fi
@@ -100,11 +108,19 @@
         \ifnum\c@framenumber>0
             \begin{tikzpicture}[overlay, remember picture]
                 \fill[color=main] (current page.south west) rectangle ([shift = {(0, \footlineheight)}] current page.south east);
-                \node at ([shift = {(-0.4cm, 0.5\footlineheight)}] current page.south east) [anchor = east, inner sep = 0pt]
+                % At left of \beamer@rightmargin.
+                \node at ([shift = {(-\beamer@rightmargin, 0.5\footlineheight)}] current page.south east) [anchor = east, inner sep = 0pt]
                 {
                     \usebeamerfont{footer}
                     \usebeamercolor[fg]{frametitle}
-                    \insertframenumber\ \strut/\strut\ \inserttotalframenumber
+                    \insertframenumber\ \strut/\strut\ 
+                };
+                % At right of \beamer@rightmargin.
+                \node at ([shift = {(-\beamer@rightmargin, 0.5\footlineheight)}] current page.south east) [anchor = west, inner sep = 0pt]
+                {
+                    \usebeamerfont{footer}
+                    \usebeamercolor[fg]{frametitle}
+                    \vphantom{\strut/\strut}\inserttotalframenumber
                 };
             \end{tikzpicture}
         \fi
