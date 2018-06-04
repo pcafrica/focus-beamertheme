@@ -1,5 +1,5 @@
 # Focus
-A presentation theme for LaTeX Beamer that aims at a clear and minimalistic design,
+A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
 Requires the package [PGF/TikZ](https://www.ctan.org/pkg/pgf) to be installed in your LaTeX distribution.
@@ -44,7 +44,7 @@ For example:
 ```
 produces the following ice-blue color theme.
 
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-color.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-titlepage-color.jpg)
 
 Customize the footline
 ----------------------
