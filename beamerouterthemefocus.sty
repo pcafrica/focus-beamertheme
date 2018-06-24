@@ -59,7 +59,7 @@
         \ifnum\c@framenumber>0
             \ifnum\c@framenumber<\inserttotalframenumber
                 \begin{tikzpicture}[overlay, remember picture]
-                    \pgfmathsetmacro{\progress}{(\insertframenumber-1)/\inserttotalframenumber * (\textwidth-\beamer@leftmargin)}
+                    \pgfmathsetmacro{\progress}{(\insertframenumber-1)/(\inserttotalframenumber-1) * (\textwidth-2*\beamer@leftmargin)}
                     % Current frame number.
                     \fill[color=main] (current page.south west) rectangle ([shift = {(\progress pt + \beamer@leftmargin, \footlineheight)}] current page.south west);
                     \node at ([shift = {(\progress pt + \beamer@leftmargin, 0.5\footlineheight)}] current page.south west) [anchor = east, inner sep = 0pt]
