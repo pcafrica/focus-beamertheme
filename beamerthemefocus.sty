@@ -18,6 +18,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerthemefocus}[2018/06/25 v1.1 Focus Beamer theme]
 
+% Note:
+% Packages should be required in the package file using their commands!
+
+
 \mode<presentation>
 
 \RequirePackage[T1]{fontenc}
@@ -26,10 +30,6 @@
 
 
 
-\RequirePackage{tikz}
-
-\RequirePackage{etoolbox} % \BeforeBeginEnvironment
-\RequirePackage{appendixnumberbeamer} % Don't number appendix frames.
 
 
 \DeclareOptionBeamer{numbering}{
