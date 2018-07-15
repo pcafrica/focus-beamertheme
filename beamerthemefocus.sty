@@ -1,4 +1,5 @@
 % Copyright (C) 2018 Pasquale Claudio Africa.
+%               2018 Sebastian Friedl.
 %
 % This file is part of beamerthemefocus.
 %
@@ -24,18 +25,35 @@
 
 \mode<presentation>
 
-\RequirePackage[T1]{fontenc}
-\RequirePackage{FiraSans}
 
 
+% THEME OPTIONS ------------------------------------------------------------------------------------
 
-
-
-
-\DeclareOptionBeamer{numbering}{
+\DeclareOptionBeamer{numbering}{%
     \PassOptionsToPackage{numbering=#1}{beamerouterthemefocus}
 }
+
+\newif\if@focus@loadfirafonts
+\@focus@loadfirafontstrue
+
+\DeclareOptionBeamer{nofirafonts}{\@focus@loadfirafontsfalse}
+
 \ProcessOptionsBeamer
+
+
+
+% LOAD STUFF ---------------------------------------------------------------------------------------
+
+\if@focus@loadfirafonts
+    \RequirePackage[T1]{fontenc}
+    
+    \PassOptionsToPackage{type1}{FiraSans}
+    \PassOptionsToPackage{type1}{FiraMono}
+    
+    \RequirePackage{FiraSans}
+    \RequirePackage{FiraMono}
+\fi
+
 
 \usecolortheme{focus}
 \usefonttheme{focus}
@@ -43,17 +61,16 @@
 \useoutertheme{focus}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{blocks}[default]
 
-\setbeamertemplate{section in toc}[square]
-\setbeamertemplate{subsection in toc}[square]
 
-\setbeamertemplate{itemize items}[square]
-\setbeamertemplate{itemize subitem}[triangle]
 
-% Set margins.
+% MARGINS ------------------------------------------------------------------------------------------
+
 \setbeamersize{text margin left=0.75cm, text margin right=0.75cm}
 \setlength{\leftmargini}{0.75cm}
 %\leftmarginii=0.75\leftmargini\relax
 
+
+
 \mode<all>
+
