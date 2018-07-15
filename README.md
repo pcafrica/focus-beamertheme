@@ -2,7 +2,7 @@
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
-Requires the package [PGF/TikZ](https://www.ctan.org/pkg/pgf) to be installed in your LaTeX distribution.
+Requires the packages [appendixnumberbeamer](https://ctan.org/pkg/appendixnumberbeamer), [fira](https://ctan.org/pkg/fira) and [PGF/TikZ](https://ctan.org/pkg/pgf) to be installed in your LaTeX distribution.
 
 Demo
 ----
@@ -62,6 +62,14 @@ Alternatively, a full footline bar with the frame numbering can be shown with:
 The footline may also be disabled by typing:
 ```latex
 \usetheme[numbering=none]{focus}
+```
+
+Customize fonts
+---------------
+Focus is using the [Fira fonts](https://bboxtype.com/typefaces/FiraSans/) by default.  
+This can be changed by using the option _nofirafonts_:
+```latex
+\usetheme[nofirafonts]{focus}
 ```
 
 License
