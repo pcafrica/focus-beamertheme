@@ -135,7 +135,12 @@
     \end{tikzpicture}%
 }
 
-\defbeamertemplate{background canvas}{focusplain}{}
+\defbeamertemplate{background canvas}{focusplain}{%
+    \begin{tikzpicture}
+        \clip (0,0) rectangle ++(\paperwidth,\paperheight);
+        \fill[normal text.bg] (0,0) rectangle ++(\paperwidth,\paperheight);
+    \end{tikzpicture}%
+}
 
 \defbeamertemplate{background canvas}{focusframe}{%
     \begin{tikzpicture}
