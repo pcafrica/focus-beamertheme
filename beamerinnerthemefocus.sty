@@ -1,4 +1,5 @@
 % Copyright (C) 2018 Pasquale Claudio Africa.
+%               2018 Sebastia Friedl.
 %
 % This file is part of beamerthemefocus.
 %
@@ -23,11 +24,11 @@
 
 
 % Title page.
-\defbeamertemplate*{title page}{focus}[1][]
-{
-    \begin{tikzpicture}[overlay, remember picture]
-        \fill[color=main] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
-    \end{tikzpicture}
+\defbeamertemplate*{title page}{focus}{%
+    {\usebeamercolor{frametitle}\colorlet{focus@@temp}{bg}%
+        \begin{tikzpicture}[overlay, remember picture]
+            \fill[color=focus@@temp] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
+        \end{tikzpicture}}
     
     \vspace{-1.65\baselineskip}
     \begin{minipage}[b][0.35\paperheight]{\textwidth}
@@ -72,10 +73,11 @@
 }
 
 % Section page.
-\defbeamertemplate*{section page}{focus}{
-    \begin{tikzpicture}[overlay, remember picture]
-        \fill[color=main] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
-    \end{tikzpicture}
+\defbeamertemplate*{section page}{focus}{%
+    {\usebeamercolor{frametitle}\colorlet{focus@@temp}{bg}%
+        \begin{tikzpicture}[overlay, remember picture]
+            \fill[color=focus@@temp] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
+        \end{tikzpicture}}
     
     \vspace{-2\baselineskip}
     \begin{minipage}[b][0.45\paperheight]{\textwidth}
