@@ -3,14 +3,14 @@
 %
 % This file is part of beamerthemefocus.
 %
-% beamerthemefocusis free software: you can redistribute it and/or modify
+% beamerthemefocus is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
 % (at your option) any later version.
 % 
 % beamerthemefocus is distributed in the hope that it will be useful,
 % but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 % GNU General Public License for more details.
 % 
 % You should have received a copy of the GNU General Public License
@@ -18,21 +18,18 @@
 
 \mode<presentation>
 
-
 \RequirePackage{appendixnumberbeamer}% Don't number appendix frames.
 \RequirePackage{etoolbox}% \BeforeBeginEnvironment
 \RequirePackage{tikz}
 
 
-
-
-% FRAMETITLE TEMPLATES -------------------------------------------------------------------------------------------------
+% FRAMETITLE TEMPLATES. -------------------------------------------------------------------------------------------------
 
 \defbeamertemplate*{frametitle}{focus}{%
     % If not title page.
     \ifnum\value{framenumber}>0%
         \vspace{-1pt}%
-        \begin{beamercolorbox}[wd=\paperwidth,leftskip=.55cm,rightskip=.55cm,sep=.2cm]{frametitle}%
+        \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.55cm,rightskip=0.55cm,sep=0.2cm]{frametitle}%
             \strut\insertframetitle\strut%
         \end{beamercolorbox}%
     \fi%
@@ -43,7 +40,7 @@
     % If not title page.
     \ifnum\value{framenumber}>0%
         \vspace{-1pt}%
-        \begin{beamercolorbox}[wd=\paperwidth,leftskip=.55cm,rightskip=.55cm,sep=.2cm,ignorebg]{frametitle}%
+        \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.55cm,rightskip=0.55cm,sep=0.2cm,ignorebg]{frametitle}%
             \strut%
         \end{beamercolorbox}%
     \fi%
@@ -51,7 +48,7 @@
 
 
 
-% FOOTLINE TEMPLATES ---------------------------------------------------------------------------------------------------
+% FOOTLINE TEMPLATES. ---------------------------------------------------------------------------------------------------
 
 % Lenghts for the progress bar footline.
 \newlength{\focus@pbar@height}% Progress bar height.
@@ -71,7 +68,7 @@
         % If not title page.
         \ifnum\c@framenumber>0%
             \ifnum\c@framenumber<\inserttotalframenumber%
-                \begin{tikzpicture}[inner xsep=.5em, inner ysep=.5ex]\usebeamerfont{footline}
+                \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]\usebeamerfont{footline}
                     \pgfmathsetmacro{\focus@pbar@progress}%
                         {(\paperwidth-\focus@pbar@leftoffset-\focus@pbar@rightoffset)*(\insertframenumber/\inserttotalframenumber)}
                 
@@ -79,19 +76,19 @@
                     \fill[footline.bg] (0,0) rectangle ++(\the\focus@pbar@leftoffset,\the\focus@pbar@height);
                     
                     \fill[footline.bg] (\the\focus@pbar@leftoffset,0) rectangle ++(\focus@pbar@progress pt,\the\focus@pbar@height)
-                                       ++(0,{-.5*\the\focus@pbar@height}) node[anchor=east, text=footline.fg] {\strut\insertframenumber};
+                                       ++(0,{-0.5*\the\focus@pbar@height}) node[anchor=east, text=footline.fg] {\strut\insertframenumber};
                     
                     \fill[footline.bg] (\paperwidth,0) rectangle ++(-\the\focus@pbar@rightoffset,\the\focus@pbar@height)
-                                       ++(0,{-.5*\the\focus@pbar@height}) node[anchor=west, text=footline.fg] {\strut\inserttotalframenumber};
+                                       ++(0,{-0.5*\the\focus@pbar@height}) node[anchor=west, text=footline.fg] {\strut\inserttotalframenumber};
                 \end{tikzpicture}%
             \else%
-                \begin{tikzpicture}[inner xsep=.5em, inner ysep=.5ex]
+                \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
                     \clip (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
                     \fill[footline.bg] (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
                     
-                    \node[anchor=east, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{.5*\focus@pbar@height}) {\strut\insertframenumber};
-                    \node[footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{.5*\focus@pbar@height}) {\strut/};
-                    \node[anchor=west, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{.5*\focus@pbar@height}) {\strut\inserttotalframenumber};
+                    \node[anchor=east, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\insertframenumber};
+                    \node[footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut/};
+                    \node[anchor=west, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\inserttotalframenumber};
                 \end{tikzpicture}%
             \fi%
         \fi%
@@ -104,13 +101,13 @@
     \ifnum\mainend<0% From package appendixnumberbeamer.
         % If not title page.
         \ifnum\c@framenumber>0%
-            \begin{tikzpicture}[inner xsep=.5em, inner ysep=.5ex]
+            \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
                 \clip (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
                 \fill[footline.bg] (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
                 
-                \node[anchor=east, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{.5*\focus@pbar@height}) {\strut\insertframenumber};
-                \node[footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{.5*\focus@pbar@height}) {\strut/};
-                \node[anchor=west, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{.5*\focus@pbar@height}) {\strut\inserttotalframenumber};
+                \node[anchor=east, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\insertframenumber};
+                \node[footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut/};
+                \node[anchor=west, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\inserttotalframenumber};
             \end{tikzpicture}%
         \fi%
     \fi%
@@ -129,7 +126,7 @@
 
 
 
-% BACKGROUND CANVAS TEMPLATES ------------------------------------------------------------------------------------------
+% BACKGROUND CANVAS TEMPLATES. ------------------------------------------------------------------------------------------
 
 \defbeamertemplate*{background canvas}{focus}{%
     \begin{tikzpicture}
@@ -149,7 +146,7 @@
 
 
 
-% HOOKS FOR CREATING FRAMES --------------------------------------------------------------------------------------------
+% HOOKS FOR CREATING FRAMES. --------------------------------------------------------------------------------------------
 
 \BeforeBeginEnvironment{frame}{%
     \setbeamertemplate{background canvas}[focus]%
@@ -202,8 +199,8 @@
 \define@key{beamerframe}{c}[true]{%
     \beamer@frametopskip=0pt plus 1fill\relax%
     \beamer@framebottomskip=0pt plus 1fill\relax%
-    \beamer@frametopskipautobreak=0pt plus .4\paperheight\relax%
-    \beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
+    \beamer@frametopskipautobreak=0pt plus 0.4\paperheight\relax%
+    \beamer@framebottomskipautobreak=0pt plus 0.6\paperheight\relax%
     \def\beamer@initfirstlineunskip{}%
 }
 
@@ -234,9 +231,10 @@
 }{}{}
 
 
+% Recalculate the footline's size and refresh other parameters.
+% Partially copied from the definition of \beamer@calculateheadfoot.
+
 \def\focus@calculatefootheight{%
-     % Recalculate the footline's size and refresh other parameters
-     % Partially copied from the definition of \beamer@calculateheadfoot
     \footheight=\focus@pbar@height%
     \advance\footheight by 4pt%
     \sidebarheight=\paperheight%
@@ -252,7 +250,5 @@
     \@colroom\textheight%
     \vsize\textheight%
 }
-
-
 
 \mode<all>

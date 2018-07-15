@@ -3,14 +3,14 @@
 %
 % This file is part of beamerthemefocus.
 %
-% beamerthemefocusis free software: you can redistribute it and/or modify
+% beamerthemefocus is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
 % (at your option) any later version.
 % 
 % beamerthemefocus is distributed in the hope that it will be useful,
 % but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 % GNU General Public License for more details.
 % 
 % You should have received a copy of the GNU General Public License
@@ -26,8 +26,7 @@
 \mode<presentation>
 
 
-
-% THEME OPTIONS ------------------------------------------------------------------------------------
+% THEME OPTIONS. ------------------------------------------------------------------------------------
 
 \DeclareOptionBeamer{numbering}{%
     \PassOptionsToPackage{numbering=#1}{beamerouterthemefocus}
@@ -42,7 +41,7 @@
 
 
 
-% LOAD STUFF ---------------------------------------------------------------------------------------
+% LOAD EXTERNAL PACKAGES. ---------------------------------------------------------------------------------------
 
 \if@focus@loadfirafonts
     \RequirePackage[T1]{fontenc}
@@ -64,13 +63,10 @@
 
 
 
-% MARGINS ------------------------------------------------------------------------------------------
+% SET MARGINS. ------------------------------------------------------------------------------------------
 
 \setbeamersize{text margin left=0.75cm, text margin right=0.75cm}
 \setlength{\leftmargini}{0.75cm}
 %\leftmarginii=0.75\leftmargini\relax
 
-
-
 \mode<all>
-

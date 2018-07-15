@@ -3,14 +3,14 @@
 %
 % This file is part of beamerthemefocus.
 %
-% beamerthemefocusis free software: you can redistribute it and/or modify
+% beamerthemefocus is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
 % (at your option) any later version.
 % 
 % beamerthemefocus is distributed in the hope that it will be useful,
 % but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 % GNU General Public License for more details.
 % 
 % You should have received a copy of the GNU General Public License
@@ -18,12 +18,10 @@
 
 \mode<presentation>
 
-
 \RequirePackage{tikz}
 
 
-
-% CUSTOMIZE STRUCTURE ELEMENTS ---------------------------------------------------------------------
+% CUSTOMIZE STRUCTURE ELEMENTS. ---------------------------------------------------------------------
 
 \setbeamertemplate{blocks}[default]
 
@@ -35,7 +33,7 @@
 
 
 
-% STRUCTURE FRAME TEMPLATE DEFINITIONS -------------------------------------------------------------
+% STRUCTURE FRAME TEMPLATE DEFINITIONS. -------------------------------------------------------------
 
 % Title page.
 \defbeamertemplate*{title page}{focus}{%
@@ -88,10 +86,12 @@
 
 % Section page.
 \defbeamertemplate*{section page}{focus}{%
-    {\usebeamercolor{frametitle}\colorlet{focus@@temp}{bg}%
+    {%
+        \usebeamercolor{frametitle}\colorlet{focus@@temp}{bg}%
         \begin{tikzpicture}[overlay, remember picture]
             \fill[color=focus@@temp] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
-        \end{tikzpicture}}
+        \end{tikzpicture}%
+    }
     
     \vspace{-2\baselineskip}
     \begin{minipage}[b][0.45\paperheight]{\textwidth}
@@ -109,8 +109,5 @@
         \sectionpage
     \end{frame}%
 }
-
-
-
 
 \mode<all>
