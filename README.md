@@ -2,7 +2,12 @@
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
-Requires the packages [appendixnumberbeamer](https://ctan.org/pkg/appendixnumberbeamer), [fira](https://ctan.org/pkg/fira) and [PGF/TikZ](https://ctan.org/pkg/pgf) to be installed in your LaTeX distribution.
+This package is available through the [CTAN](https://ctan.org/pkg/beamertheme-focus) in
+most LaTeX distributions such as [MiKTeX](https://ctan.org/pkg/miktex) and [TeXLive](https://ctan.org/pkg/texlive).
+
+Requires the packages [appendixnumberbeamer](https://ctan.org/pkg/appendixnumberbeamer),
+[fira](https://ctan.org/pkg/fira) and [PGF/TikZ](https://ctan.org/pkg/pgf)
+to be installed in your LaTeX distribution.
 
 Demo
 ----
@@ -66,7 +71,8 @@ The footline may also be disabled by typing:
 
 Customize fonts
 ---------------
-Focus is using the [Fira fonts](https://bboxtype.com/typefaces/FiraSans/) by default.  
+Focus is using the [Fira fonts](https://bboxtype.com/typefaces/FiraSans/) by default.
+
 This can be changed by using the option _nofirafonts_:
 ```latex
 \usetheme[nofirafonts]{focus}
@@ -83,3 +89,12 @@ If you are enjoying this theme please share it with your friends or colleagues!
 Any suggestions, comments, criticism or appreciation are welcome!
 
 Contact information are available to registered users on my Github profile page.
+
+Authors
+=======
+Focus was initially created and designed by [Pasquale Africa](https://github.com/elauksap).
+
+My gratitude goes to the following authors, whose help has provided a significant contribution
+to its development.
+
+[Sebastian Friedl](https://github.com/SFr682k)
