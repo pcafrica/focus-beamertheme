@@ -1,4 +1,4 @@
-# Focus
+# Focus v2.1
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
