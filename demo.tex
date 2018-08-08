@@ -93,7 +93,32 @@
                 \end{description}
         \end{columns}
     \end{frame}
-
+\setbeamertemplate{caption}[numbered]
+    \begin{frame}{Figures and Tables}
+        \begin{columns}
+            \column{0.4\textwidth}
+                \begin{figure}
+                    \centering
+                    \includegraphics{focuslogo.pdf}
+                    \caption{Figure caption.}
+                    \label{fig:focuslogo}
+                \end{figure}
+                
+            \column{0.6\textwidth}
+                \begin{table}
+                    \centering
+                    \begin{tabular}{rcc}
+                         & Heading 1 & Heading 2 \\\hline
+                        Row 1 & \(v_{11}\) & \(v_{12}\) \\
+                        Row 2 & \(v_{21}\) & \(v_{22}\) \\
+                        Row 3 & \(v_{31}\) & \(v_{32}\) \\
+                    \end{tabular}
+                    \caption{Table caption.}
+                    \label{tab:demo}
+                \end{table}
+        \end{columns}
+    \end{frame}
+    
     \begin{frame}[focus]
         Thanks for using \textbf{Focus}!
     \end{frame}
