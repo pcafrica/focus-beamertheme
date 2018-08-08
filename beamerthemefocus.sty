@@ -19,15 +19,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerthemefocus}[2018/07/15 v2.0 Focus Beamer theme]
 
-% Note:
-% Packages should be required in the package file using their commands!
-
-
 \mode<presentation>
 
 
-% THEME OPTIONS. ------------------------------------------------------------------------------------
-
+% THEME OPTIONS. ---------------------------------------------------------------
 \DeclareOptionBeamer{numbering}{%
     \PassOptionsToPackage{numbering=#1}{beamerouterthemefocus}
 }
@@ -36,13 +31,10 @@
 \@focus@loadfirafontstrue
 
 \DeclareOptionBeamer{nofirafonts}{\@focus@loadfirafontsfalse}
-
 \ProcessOptionsBeamer
 
 
-
-% LOAD EXTERNAL PACKAGES. ---------------------------------------------------------------------------------------
-
+% LOAD EXTERNAL PACKAGES. ------------------------------------------------------
 \if@focus@loadfirafonts
     \RequirePackage[T1]{fontenc}
     
@@ -53,7 +45,6 @@
     \RequirePackage{FiraMono}
 \fi
 
-
 \usecolortheme{focus}
 \usefonttheme{focus}
 \useinnertheme{focus}
@@ -62,11 +53,8 @@
 \setbeamertemplate{navigation symbols}{}
 
 
-
-% SET MARGINS. ------------------------------------------------------------------------------------------
-
+% SET MARGINS. -----------------------------------------------------------------
 \setbeamersize{text margin left=0.75cm, text margin right=0.75cm}
 \setlength{\leftmargini}{0.75cm}
-%\leftmarginii=0.75\leftmargini\relax
 
 \mode<all>

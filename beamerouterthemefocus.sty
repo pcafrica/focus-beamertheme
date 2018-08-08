@@ -23,8 +23,7 @@
 \RequirePackage{tikz}
 
 
-% FRAMETITLE TEMPLATES. -------------------------------------------------------------------------------------------------
-
+% FRAMETITLE TEMPLATES. --------------------------------------------------------
 \defbeamertemplate*{frametitle}{focus}{%
     % If not title page.
     \ifnum\value{framenumber}>0%
@@ -47,9 +46,7 @@
 }
 
 
-
-% FOOTLINE TEMPLATES. ---------------------------------------------------------------------------------------------------
-
+% FOOTLINE TEMPLATES. ----------------------------------------------------------
 % Lenghts for the progress bar footline.
 \newlength{\focus@pbar@height}% Progress bar height.
 \newlength{\focus@pbar@leftoffset}
@@ -125,9 +122,7 @@
 \def\beamer@focus@numberingnone{none}
 
 
-
-% BACKGROUND CANVAS TEMPLATES. ------------------------------------------------------------------------------------------
-
+% BACKGROUND CANVAS TEMPLATES. -------------------------------------------------
 \defbeamertemplate*{background canvas}{focus}{%
     \begin{tikzpicture}
         \clip (0,0) rectangle ++(\paperwidth,\paperheight);
@@ -150,9 +145,7 @@
 }
 
 
-
-% HOOKS FOR CREATING FRAMES. --------------------------------------------------------------------------------------------
-
+% HOOKS FOR CREATING FRAMES. ---------------------------------------------------
 \BeforeBeginEnvironment{frame}{%
     \setbeamertemplate{background canvas}[focus]%
     \setbeamertemplate{frametitle}[focus]%
@@ -179,7 +172,6 @@
 }
 
 % Enable noframenumbering option.
-
 \define@key{beamerframe}{noframenumbering}[true]{%
     \setbeamertemplate{footline}[none]%
     \setlength{\focus@pbar@height}{0cm}%
@@ -190,7 +182,6 @@
 
 
 % Enable plain option.
-
 \define@key{beamerframe}{plain}[true]{%
     \setbeamertemplate{background canvas}[focusplain]%
     \setbeamertemplate{frametitle}[plain]%
@@ -201,7 +192,6 @@
 
 % Full vertical centering
 % (from https://tex.stackexchange.com/questions/247826/beamer-full-vertical-centering).
-
 \define@key{beamerframe}{c}[true]{%
     \beamer@frametopskip=0pt plus 1fill\relax%
     \beamer@framebottomskip=0pt plus 1fill\relax%
@@ -212,7 +202,6 @@
 
 
 % Enable focus option.
-
 \providebool{focus@standout}
 \define@key{beamerframe}{focus}[true]{%
     \booltrue{focus@standout}%
@@ -239,7 +228,6 @@
 
 % Recalculate the footline's size and refresh other parameters.
 % Partially copied from the definition of \beamer@calculateheadfoot.
-
 \def\focus@calculatefootheight{%
     \footheight=\focus@pbar@height%
     \advance\footheight by 4pt%
