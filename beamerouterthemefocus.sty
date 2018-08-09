@@ -96,6 +96,13 @@
 \defbeamertemplate{footline}{fullbar}{%
     % If not appendix.
     \ifnum\mainend<0% From package appendixnumberbeamer.
+        %
+        \settowidth{\focus@pbar@leftoffset}{1}%
+        \addtolength{\focus@pbar@leftoffset}{1.5em}%
+        %
+        \settowidth{\focus@pbar@rightoffset}{\inserttotalframenumber}%
+        \addtolength{\focus@pbar@rightoffset}{1.5em}%
+        %
         % If not title page.
         \ifnum\c@framenumber>0%
             \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
