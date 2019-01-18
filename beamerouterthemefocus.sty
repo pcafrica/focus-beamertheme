@@ -1,8 +1,10 @@
-% Copyright (C) 2018 Pasquale Claudio Africa.
-%               2018 Sebastian Friedl.
+% Copyright (C) 2018-2019 Pasquale Claudio Africa and the LaTeX community.
+% A full list of contributors can be found at
 %
+%     https://github.com/elauksap/focus-beamertheme
+% 
 % This file is part of beamerthemefocus.
-%
+% 
 % beamerthemefocus is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
@@ -18,8 +20,21 @@
 
 \mode<presentation>
 
-\RequirePackage{appendixnumberbeamer}% Don't number appendix frames.
-\RequirePackage{etoolbox}% \BeforeBeginEnvironment
+\RequirePackage{appendixnumberbeamer} % Don't number appendix frames.
+% Fix hyperref warning caused by \appendix
+% (https://tex.stackexchange.com/questions/192686/hyperref-warning-caused-by-beamer-appendix).
+\newcommand*{\bkmtranslateto}{\languagename}
+\newcommand*{\bkmtranslate}[1]{%
+   	\ifcsname tr@@@\bkmtranslateto @#1\endcsname
+   	\csname tr@@@\bkmtranslateto @#1\endcsname
+   	\else
+   	#1%
+   	\fi
+}
+\pdfstringdefDisableCommands{\let\translate\bkmtranslate}
+\RequirePackage{bookmark}
+
+\RequirePackage{etoolbox} % \BeforeBeginEnvironment.
 \RequirePackage{tikz}
 
 
