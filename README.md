@@ -1,4 +1,4 @@
-# Focus v2.2.1
+# Focus v2.3
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
@@ -90,11 +90,14 @@ Any suggestions, comments, criticism or appreciation are welcome!
 
 Contact information are available to registered users on my Github profile page.
 
-Authors
-=======
+Contributors
+============
 Focus was initially created and designed by [Pasquale Africa](https://github.com/elauksap).
 
-My gratitude goes to the following authors, whose help has provided a significant contribution
-to its development.
+The following people deserve appreciation and acknowledgment for improving the template with
+additions and modifications (in alphabetical order):
 
-[Sebastian Friedl](https://github.com/SFr682k)
+- Sebastian Friedl
+- Benjamin Goldman
+
+A more detailed contribution list is found [here](https://github.com/elauksap/focus-beamertheme/graphs/contributors).
