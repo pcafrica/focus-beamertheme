@@ -77,7 +77,8 @@
     
     \vspace*{\baselineskip}
     \begin{minipage}[t]{\textwidth}
-        \usebeamerfont{date}{\insertdate}
+        \usebeamerfont{date}
+        \insertdate
     \end{minipage}
 
    	\vspace*{0pt plus 100fill}
@@ -100,13 +101,48 @@
         \usebeamercolor[fg]{frametitle}
         \let\hyperlink\@secondoftwo\insertsection
     \end{minipage}
-    
-    \vspace*{0pt plus 100fill}
+
+    \vspace{1.5\baselineskip}
+    \begin{minipage}[t][0.55\paperheight]{\textwidth}
+        \usebeamerfont{subsectiontitle}
+        \usebeamercolor[bg]{frametitle}
+        \insertsubsection
+    \end{minipage}
 }
 
 \AtBeginSection[]{%
     \begin{frame}[plain, noframenumbering]{}
         \sectionpage
+    \end{frame}%
+}
+
+% Subsection page.
+\defbeamertemplate*{subsection page}{focus}{%
+    {%
+        \usebeamercolor{frametitle}\colorlet{focus@@temp}{bg}%
+        \begin{tikzpicture}[overlay, remember picture]
+        \fill[color=focus@@temp] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
+        \end{tikzpicture}%
+    }
+    
+    \vspace{-2.5\baselineskip}
+    \begin{minipage}[b][0.45\paperheight]{\textwidth}
+        \usebeamerfont{sectiontitle}
+        \usebeamercolor[fg]{frametitle}
+        \let\hyperlink\@secondoftwo\insertsection
+    \end{minipage}
+    
+    \vspace{1.5\baselineskip}
+    \begin{minipage}[t][0.55\paperheight]{\textwidth}
+        \usebeamerfont{subsectiontitle}
+        \usebeamercolor[bg]{frametitle}
+        \insertsubsection
+    \end{minipage}
+}
+
+\AtBeginSubsection[]{%
+    \begin{frame}[plain, noframenumbering]{}
+        \subsectionpage
     \end{frame}%
 }
 

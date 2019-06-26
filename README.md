@@ -1,4 +1,4 @@
-# Focus v2.3
+# Focus v2.4
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
@@ -14,7 +14,7 @@ Demo
 A full demo is available. Refer to `demo.tex` and `demo.pdf`.
 
 ![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-titlepage.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-sectionpage.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-subsectionpage.jpg)
 ![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-typeset.jpg)
 ![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-focus.jpg)
 ![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-references.jpg)
