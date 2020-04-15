@@ -37,11 +37,12 @@
 \RequirePackage{etoolbox} % \BeforeBeginEnvironment.
 \RequirePackage{tikz}
 
+\newcounter{realframenumber}
 
 % FRAMETITLE TEMPLATES. --------------------------------------------------------
 \defbeamertemplate*{frametitle}{focus}{%
     % If not title page.
-    \ifnum\value{framenumber}>0%
+    \ifnum\value{realframenumber}>0%
         \vspace{-1pt}%
         \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.55cm,rightskip=0.55cm,sep=0.2cm]{frametitle}%
             \strut\insertframetitle\strut%
@@ -52,7 +53,7 @@
 % Plain header.
 \defbeamertemplate{frametitle}{plain}{%
     % If not title page.
-    \ifnum\value{framenumber}>0%
+    \ifnum\value{realframenumber}>0%
         \vspace{-1pt}%
         \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.55cm,rightskip=0.55cm,sep=0.2cm,ignorebg]{frametitle}%
             \strut%
@@ -78,8 +79,8 @@
         \addtolength{\focus@pbar@rightoffset}{1.5em}%
         %
         % If not title page.
-        \ifnum\c@framenumber>0%
-            \ifnum\c@framenumber<\inserttotalframenumber%
+        \ifnum\value{realframenumber}>0%
+            \ifnum\value{framenumber}<\inserttotalframenumber%
                 \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]\usebeamerfont{footline}
                     \pgfmathsetmacro{\focus@pbar@progress}%
                         {(\paperwidth-\focus@pbar@leftoffset-\focus@pbar@rightoffset)*(\insertframenumber/\inserttotalframenumber)}
@@ -119,7 +120,7 @@
         \addtolength{\focus@pbar@rightoffset}{1.5em}%
         %
         % If not title page.
-        \ifnum\c@framenumber>0%
+        \ifnum\value{realframenumber}>0%
             \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
                 \clip (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
                 \fill[footline.bg] (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
@@ -169,6 +170,7 @@
 
 % HOOKS FOR CREATING FRAMES. ---------------------------------------------------
 \BeforeBeginEnvironment{frame}{%
+    \stepcounter{realframenumber}
     \setbeamertemplate{background canvas}[focus]%
     \setbeamertemplate{frametitle}[focus]%
     %
