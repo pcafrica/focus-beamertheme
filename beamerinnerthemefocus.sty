@@ -38,9 +38,9 @@
 \defbeamertemplate*{title page}{focus}{%
     {%
        	\usebeamercolor{frametitle}\colorlet{focus@@temp}{bg}%
-	    \begin{tikzpicture}[overlay, remember picture]
-	        \fill[color=focus@@temp] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
-	    \end{tikzpicture}
+        \begin{tikzpicture}[overlay, remember picture]
+            \fill[color=focus@@temp] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
+    \end{tikzpicture}
     }
     
     \vspace{-1.65\baselineskip}
@@ -103,8 +103,8 @@
         \let\hyperlink\@secondoftwo\insertsection
     \end{minipage}
 
-    \vspace{1.5\baselineskip}
-    \begin{minipage}[t][0.55\paperheight]{\textwidth}
+    \vspace{\baselineskip}
+    \begin{minipage}[t][0.5\paperheight]{\textwidth}
         \usebeamerfont{subsectiontitle}
         \usebeamercolor[bg]{frametitle}
         \insertsubsection
@@ -122,7 +122,7 @@
     {%
         \usebeamercolor{frametitle}\colorlet{focus@@temp}{bg}%
         \begin{tikzpicture}[overlay, remember picture]
-        \fill[color=focus@@temp] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
+            \fill[color=focus@@temp] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
         \end{tikzpicture}%
     }
     
@@ -133,8 +133,8 @@
         \let\hyperlink\@secondoftwo\insertsection
     \end{minipage}
     
-    \vspace{1.5\baselineskip}
-    \begin{minipage}[t][0.55\paperheight]{\textwidth}
+    \vspace{\baselineskip}
+    \begin{minipage}[t][0.5\paperheight]{\textwidth}
         \usebeamerfont{subsectiontitle}
         \usebeamercolor[bg]{frametitle}
         \insertsubsection
