@@ -1,4 +1,4 @@
-# Focus v2.6
+# Focus v2.7
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
@@ -11,14 +11,14 @@ to be installed in your LaTeX distribution.
 
 Demo
 ----
-A full demo is available. Refer to `demo.tex` and `demo.pdf`.
+A full demo is available. Refer to `focus-demo.tex` and `focus-demo.pdf`.
 
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-titlepage.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-subsectionpage.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-typeset.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-focus.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-references.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-appendix.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-titlepage.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-subsectionpage.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-typeset.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-focus.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-references.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-appendix.jpg)
 
 Download
 ========
@@ -49,7 +49,7 @@ For example:
 ```
 produces the following ice-blue color theme.
 
-![](https://github.com/elauksap/focustheme/blob/master/demo-screenshots/demo-titlepage-color.jpg)
+![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-titlepage-color.jpg)
 
 Customize the footline
 ----------------------
