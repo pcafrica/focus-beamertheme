@@ -51,7 +51,7 @@
 }
 
 % Plain header.
-\defbeamertemplate*{frametitle}{plain}{%
+\defbeamertemplate{frametitle}{plain}{%
     % If not title page.
     \ifnum\value{realframenumber}>0%
         \vspace{-1pt}%
@@ -109,7 +109,7 @@
 }
 
 % Full bar footline.
-\defbeamertemplate*{footline}{fullbar}{%
+\defbeamertemplate{footline}{fullbar}{%
     % If not appendix.
     \ifnum\mainend<0% From package appendixnumberbeamer.
         %
@@ -134,7 +134,7 @@
 }
 
 % Empty footline.
-\defbeamertemplate*{footline}{none}{}
+\defbeamertemplate{footline}{none}{}
 
 \DeclareOptionBeamer{numbering}{\def\beamer@focus@numbering{#1}}
 \ExecuteOptionsBeamer{numbering=progressbar}
@@ -153,14 +153,7 @@
     \end{tikzpicture}%
 }
 
-\defbeamertemplate*{background canvas}{focusplain}{%
-    \begin{tikzpicture}
-        \clip (0,0) rectangle ++(\paperwidth,\paperheight);
-        \fill[normal text.bg] (0,0) rectangle ++(\paperwidth,\paperheight);
-    \end{tikzpicture}%
-}
-
-\defbeamertemplate*{background canvas}{focusframe}{%
+\defbeamertemplate{background canvas}{focusframe}{%
     \begin{tikzpicture}
         \clip (0,0) rectangle ++(\paperwidth,\paperheight);
         \fill[frametitle.bg] (0,0) rectangle ++(\paperwidth,\paperheight);        
@@ -207,7 +200,7 @@
 
 % Enable plain option.
 \define@key{beamerframe}{plain}[true]{%
-    \setbeamertemplate{background canvas}[focusplain]%
+    \setbeamertemplate{background canvas}[focus]%
     \setbeamertemplate{frametitle}[plain]%
     %
     \setbeamertemplate{footline}[none]%
