@@ -1,4 +1,4 @@
-# Focus v2.7.1
+# Focus v2.8
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
@@ -63,8 +63,13 @@ Alternatively, a full footline bar with the frame numbering can be shown with:
 ```latex
 \usetheme[numbering=fullbar]{focus}
 ```
+In such case, an optional text to be printed on the left side of the footline
+can be customized with:
+```latex
+\footlineinfo{Custom footline text}
+```
 
-The footline may also be disabled by typing:
+The footline may also be disabled globally by typing:
 ```latex
 \usetheme[numbering=none]{focus}
 ```

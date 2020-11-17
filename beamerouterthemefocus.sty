@@ -109,6 +109,7 @@
 }
 
 % Full bar footline.
+\def\footlineinfo#1{\def\focus@footlineinfo{#1}}
 \defbeamertemplate{footline}{fullbar}{%
     % If not appendix.
     \ifnum\mainend<0% From package appendixnumberbeamer.
@@ -124,7 +125,12 @@
             \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
                 \clip (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
                 \fill[footline.bg] (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
-                
+
+                \ifx\focus@footlineinfo\empty
+                \else
+                    \node[anchor=west, footline.fg] at ({\the\focus@pbar@leftoffset},{0.5*\focus@pbar@height}) {\focus@footlineinfo};
+                \fi
+
                 \node[anchor=east, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\insertframenumber};
                 \node[footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut/};
                 \node[anchor=west, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\inserttotalframenumber};
