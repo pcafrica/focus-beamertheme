@@ -110,6 +110,7 @@
 
 % Full bar footline.
 \def\footlineinfo#1{\def\focus@footlineinfo{#1}}
+\footlineinfo{} % Empty by default.
 \defbeamertemplate{footline}{fullbar}{%
     % If not appendix.
     \ifnum\mainend<0% From package appendixnumberbeamer.
