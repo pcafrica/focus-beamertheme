@@ -1,4 +1,4 @@
-# Focus v2.8.1
+# Focus v2.9.0
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
