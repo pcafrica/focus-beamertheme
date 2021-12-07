@@ -69,10 +69,16 @@ can be customized with:
 \footlineinfo{Custom footline text}
 ```
 
+For both footline numberings the full page numbering can be deactivated via `fullpagenumbering=no` as an option in theme selection. The standard value is `yes`.
+```latex
+\usetheme[fullpagenumbering=no]{focus}
+```
+
 The footline may also be disabled globally by typing:
 ```latex
 \usetheme[numbering=none]{focus}
 ```
+
 
 Customize fonts
 ---------------
