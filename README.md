@@ -63,13 +63,7 @@ Alternatively, a full footline bar with the frame numbering can be shown with:
 ```latex
 \usetheme[numbering=fullbar]{focus}
 ```
-
-or in a more minimal version only display the current frame number using:
-```latex
-\usetheme[numbering=minimal]{focus}
-```
-
-In both cases, an optional text to be printed on the left side of the footline
+In such case, an optional text to be printed on the left side of the footline
 can be customized with:
 ```latex
 \footlineinfo{Custom footline text}
