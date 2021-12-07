@@ -1,4 +1,4 @@
-# Focus v2.9.0
+# Focus v3.0.0
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
@@ -69,7 +69,7 @@ can be customized with:
 \footlineinfo{Custom footline text}
 ```
 
-For both footline numberings the total frame numbering can be deactivated via `totalframenumbering=no` as an option in theme selection. The standard value is `yes`.
+For both footline styles the total frame number (shown by default) can be suppressed with:
 ```latex
 \usetheme[totalframenumbering=no]{focus}
 ```
@@ -108,7 +108,8 @@ Focus was initially created and designed by [Pasquale Africa](https://github.com
 The following people deserve appreciation and acknowledgment for improving the template with
 additions and modifications (in alphabetical order):
 
-- Sebastian Friedl
-- Benjamin Goldman
+- [max](https://github.com/imntl)
+- [MonsieurPi](https://github.com/MonsieurPi)
+- [SFr682k](https://github.com/SFr682k)
 
 A more detailed contribution list is found [here](https://github.com/elauksap/focus-beamertheme/graphs/contributors).
