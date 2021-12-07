@@ -160,33 +160,6 @@
     \fi%
 }
 
-% Minimal fullbar footline.
-\def\footlineinfo#1{\def\focus@footlineinfo{#1}}
-\footlineinfo{} % Empty by default.
-\defbeamertemplate{footline}{minimal}{%
-    % If not appendix.
-    \ifnum\mainend<0% From package appendixnumberbeamer.
-        %
-        \settowidth{\focus@pbar@leftoffset}{1}%
-        \addtolength{\focus@pbar@leftoffset}{1.5em}%
-        %
-        % If not title page.
-        \ifnum\value{realframenumber}>0%
-            \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
-                \clip (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
-                \fill[footline.bg] (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
-
-                \ifx\focus@footlineinfo\empty
-                \else
-                    \node[anchor=west, footline.fg] at ({\the\focus@pbar@leftoffset},{0.5*\focus@pbar@height}) {\focus@footlineinfo};
-                \fi
-
-                \node[anchor=east, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\insertframenumber};
-            \end{tikzpicture}%
-        \fi%
-    \fi%
-}
-
 % Empty footline.
 \defbeamertemplate{footline}{none}{}
 
