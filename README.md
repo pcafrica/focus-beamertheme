@@ -69,9 +69,9 @@ can be customized with:
 \footlineinfo{Custom footline text}
 ```
 
-For both footline numberings the full page numbering can be deactivated via `fullpagenumbering=no` as an option in theme selection. The standard value is `yes`.
+For both footline numberings the total frame numbering can be deactivated via `totalframenumbering=no` as an option in theme selection. The standard value is `yes`.
 ```latex
-\usetheme[fullpagenumbering=no]{focus}
+\usetheme[totalframenumbering=no]{focus}
 ```
 
 The footline may also be disabled globally by typing:
