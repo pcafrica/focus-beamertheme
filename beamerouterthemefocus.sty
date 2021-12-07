@@ -68,7 +68,7 @@
 \newlength{\focus@pbar@leftoffset}
 \newlength{\focus@pbar@rightoffset}
 
-% Comparision token for totalframenumbering
+% Comparision token for totalframenumbering.
 \def\no{no}
 
 \defbeamertemplate*{footline}{progressbar}{%
@@ -78,8 +78,13 @@
         \settowidth{\focus@pbar@leftoffset}{1}%
         \addtolength{\focus@pbar@leftoffset}{1.5em}%
         %
-        \settowidth{\focus@pbar@rightoffset}{\inserttotalframenumber}%
-        \addtolength{\focus@pbar@rightoffset}{1.5em}%
+        \ifx\beamer@focus@totalframenumbering\no%
+            \settowidth{\focus@pbar@rightoffset}{}%
+            \addtolength{\focus@pbar@rightoffset}{0.5em}%
+        \else%
+            \settowidth{\focus@pbar@rightoffset}{\inserttotalframenumber}%
+            \addtolength{\focus@pbar@rightoffset}{1.5em}%
+        \fi%
         %
         % If not title page.
         \ifnum\value{realframenumber}>0%
@@ -94,12 +99,11 @@
                     \fill[footline.bg] (\the\focus@pbar@leftoffset,0) rectangle ++(\focus@pbar@progress pt,\the\focus@pbar@height)
                                        ++(0,{-0.5*\the\focus@pbar@height}) node[anchor=east, text=footline.fg] {\strut\insertframenumber};
                     
-                    \fill[footline.bg] (\paperwidth,0) rectangle ++(-\the\focus@pbar@rightoffset,\the\focus@pbar@height)
-                                       ++(0,{-0.5*\the\focus@pbar@height}) node[anchor=west, text=footline.fg]
-                                       {\ifx\beamer@focus@totalframenumbering\no
-                                        \else
-                                            \strut\inserttotalframenumber
-                                        \fi};
+                    \ifx\beamer@focus@totalframenumbering\no%
+                    \else%
+                        \fill[footline.bg] (\paperwidth,0) rectangle ++(-\the\focus@pbar@rightoffset,\the\focus@pbar@height)
+                                           ++(0,{-0.5*\the\focus@pbar@height}) node[anchor=west, text=footline.fg] {\strut\inserttotalframenumber};
+                    \fi%
                 \end{tikzpicture}%
             \else%
                 \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
@@ -108,12 +112,11 @@
                     
                     \node[anchor=east, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\insertframenumber};
 
-
-                    \ifx\beamer@focus@totalframenumbering\no
-                    \else
+                    \ifx\beamer@focus@totalframenumbering\no%
+                    \else%
                         \node[footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut/};
                         \node[anchor=west, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\inserttotalframenumber};
-                    \fi
+                    \fi%
                 \end{tikzpicture}%
             \fi%
         \fi%
@@ -130,12 +133,13 @@
         \settowidth{\focus@pbar@leftoffset}{1}%
         \addtolength{\focus@pbar@leftoffset}{1.5em}%
         %
-        \ifx\beamer@focus@totalframenumbering\no
-            \addtolength{\focus@pbar@rightoffset}{.5em}%
-        \else
+        \ifx\beamer@focus@totalframenumbering\no%
+            \settowidth{\focus@pbar@rightoffset}{}%
+            \addtolength{\focus@pbar@rightoffset}{0.5em}%
+        \else%
             \settowidth{\focus@pbar@rightoffset}{\inserttotalframenumber}%
             \addtolength{\focus@pbar@rightoffset}{1.5em}%
-        \fi
+        \fi%
         %
         % If not title page.
         \ifnum\value{realframenumber}>0%
@@ -143,18 +147,18 @@
                 \clip (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
                 \fill[footline.bg] (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
 
-                \ifx\focus@footlineinfo\empty
-                \else
+                \ifx\focus@footlineinfo\empty%
+                \else%
                     \node[anchor=west, footline.fg] at ({\the\focus@pbar@leftoffset},{0.5*\focus@pbar@height}) {\focus@footlineinfo};
-                \fi
+                \fi%
 
                 \node[anchor=east, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\insertframenumber};
 
-                \ifx\beamer@focus@totalframenumbering\no
-                \else
+                \ifx\beamer@focus@totalframenumbering\no%
+                \else%
                     \node[footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut/};
                     \node[anchor=west, footline.fg] at ({\paperwidth-\the\focus@pbar@rightoffset},{0.5*\focus@pbar@height}) {\strut\inserttotalframenumber};
-                \fi
+                \fi%
             \end{tikzpicture}%
         \fi%
     \fi%
@@ -165,8 +169,10 @@
 
 \DeclareOptionBeamer{numbering}{\def\beamer@focus@numbering{#1}}
 \ExecuteOptionsBeamer{numbering=progressbar}
+
 \DeclareOptionBeamer{totalframenumbering}{\def\beamer@focus@totalframenumbering{#1}}
 \ExecuteOptionsBeamer{totalframenumbering=yes}
+
 \ProcessOptionsBeamer
 
 \def\beamer@focus@numberingprogressbar{progressbar}
