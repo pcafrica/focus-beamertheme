@@ -1,0 +1,35 @@
+name: Create release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup
+        run: |
+          REPO_DIR=beamertheme-focus
+          echo "REPO_DIR=${REPO_DIR}" >> ${GITHUB_ENV}
+          echo "ASSET_NAME=${REPO_DIR}.zip" >> ${GITHUB_ENV}
+                
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: ${{env.REPO_DIR}}
+
+      - name: Create asset
+        run: |
+          zip -r ${{env.ASSET_NAME}} . -x "*.git*"
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: ${{github.ref_name}}
+          body_path: ${{github.workspace}}/${{env.REPO_DIR}}/CHANGELOG.md
+          files: ${{env.ASSET_NAME}}
+          fail_on_unmatched_files: true
