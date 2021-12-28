@@ -13,3 +13,6 @@
 *.tdo
 *.toc
 *.xml
+
+# Emacs temporary files.
+*~
