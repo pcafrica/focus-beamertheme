@@ -1,4 +1,4 @@
-# Focus v3.1.0
+# Focus v3.2.0
 A presentation theme for LaTeX Beamer that aims at a clean and minimalist design,
 so to minimize distractions and put the focus directly on the content.
 
@@ -117,5 +117,6 @@ additions and modifications (in alphabetical order):
 - [max](https://github.com/imntl)
 - [MonsieurPi](https://github.com/MonsieurPi)
 - [SFr682k](https://github.com/SFr682k)
+- [Zortaniac](https://github.com/Zortaniac)
 
 A more detailed contribution list is found [here](https://github.com/elauksap/focus-beamertheme/graphs/contributors).
