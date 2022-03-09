@@ -19,7 +19,7 @@
 % along with beamerthemefocus. If not, see <http://www.gnu.org/licenses/>.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemefocus}[2022/02/21 v3.2.0 Focus Beamer theme]
+\ProvidesPackage{beamerthemefocus}[2022/03/09 v3.3.0 Focus Beamer theme]
 
 \mode<presentation>
 
@@ -44,11 +44,17 @@
 \if@focus@loadfirafonts
     \RequirePackage[T1]{fontenc}
     
-    \PassOptionsToPackage{type1}{FiraSans}
-    \PassOptionsToPackage{type1}{FiraMono}
-    
+    \PassOptionsToPackage{sfdefault}{FiraSans}
     \RequirePackage{FiraSans}
+
     \RequirePackage{FiraMono}
+
+    \RequirePackage{firamath-otf}
+    \unimathsetup{
+        math-style = ISO,
+        bold-style = ISO,
+        mathrm     = sym
+    }
 \fi
 
 \usecolortheme{focus}

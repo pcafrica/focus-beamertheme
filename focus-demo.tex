@@ -1,3 +1,6 @@
+% !TeX TS-program = xelatex
+% !BIB TS-program = bibtex
+
 % Full instructions available at:
 % https://github.com/elauksap/focus-beamertheme
 
@@ -41,14 +44,15 @@
     \end{frame}
     
     \begin{frame}{Typesetting and Math}
-        The packages \texttt{inputenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
+        The packages \texttt{fontenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
         \vfill
         This theme provides styling commands to typeset \emph{emphasized}, \alert{alerted}, \textbf{bold}, \textcolor{example}{example text}, \dots
         \vfill
         \texttt{FiraSans} also provides support for mathematical symbols:
-        \begin{equation*}
-            e^{i\pi} + 1 = 0.
-        \end{equation*}
+        \begin{align*}
+            e^{i\pi} + 1 & = 0, \\
+            \int_{-\infty}^\infty e^{-x^2}\,\mathrm{d}x & = \sqrt{\pi}.
+        \end{align*}
     \end{frame}
 
     \section{Section 2}
@@ -138,7 +142,6 @@
     \end{frame}
     
     \begin{frame}{Backup frame}
-        \usebeamercolor[fg]{normal text}
         This is a backup frame, useful to include additional material for questions from the audience.
         \vfill
         The package \texttt{appendixnumberbeamer} is used not to number appendix frames.
