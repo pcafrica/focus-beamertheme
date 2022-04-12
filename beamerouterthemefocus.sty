@@ -183,7 +183,7 @@
         \ifnum\value{realframenumber}>0%
         \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
             \clip (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
-            \fill[footline.fg] (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
+            \fill[footline.fg, opacity=0, text opacity=1] (0,0) rectangle ++(\paperwidth,\the\focus@pbar@height);
 
             \ifx\focus@footlineinfo\empty%
             \else%
