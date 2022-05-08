@@ -95,6 +95,8 @@ This can be changed by using the option _nofirafonts_:
 \usetheme[nofirafonts]{focus}
 ```
 
+> Warning: If the font is not found by XeTex, you probably never follow the instructions on section 3.4.4 at the [Tex Live Guide -- 2022](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-330003.4.4). 
+
 License
 =======
 This software is released under the [GNU GPL v3.0 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
