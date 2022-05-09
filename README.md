@@ -3,7 +3,7 @@ A presentation theme for LaTeX Beamer that aims at a clean and minimalist design
 so to minimize distractions and put the focus directly on the content.
 
 This package is available through the [CTAN](https://ctan.org/pkg/beamertheme-focus) in
-most LaTeX distributions such as [MiKTeX](https://ctan.org/pkg/miktex) and [TeXLive](https://ctan.org/pkg/texlive).
+most LaTeX distributions such as [MiKTeX](https://ctan.org/pkg/miktex) and [TeX Live](https://ctan.org/pkg/texlive).
 
 Requires the packages [appendixnumberbeamer](https://ctan.org/pkg/appendixnumberbeamer),
 [fira](https://ctan.org/pkg/fira) and [PGF/TikZ](https://ctan.org/pkg/pgf)
@@ -95,7 +95,7 @@ This can be changed by using the option _nofirafonts_:
 \usetheme[nofirafonts]{focus}
 ```
 
-> Warning: If the font is not found by XeTex, you probably never follow the instructions on section 3.4.4 at the [Tex Live Guide -- 2022](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-330003.4.4). 
+> **Warning**: if XeTeX returns an error about the font not being found, please follow the instructions at the [TeX Live Guide, section 3.4.4](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-330003.4.4). 
 
 License
 =======
