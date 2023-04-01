@@ -13,16 +13,16 @@ Demo
 ----
 A full demo is available. Refer to `focus-demo.tex` and `focus-demo.pdf`.
 
-![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-titlepage.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-subsectionpage.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-typeset.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-focus.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-references.jpg)
-![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-appendix.jpg)
+![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-titlepage.jpg)
+![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-subsectionpage.jpg)
+![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-typeset.jpg)
+![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-focus.jpg)
+![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-references.jpg)
+![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-appendix.jpg)
 
 Download
 ========
-Download the latest release by following [this](https://github.com/elauksap/focustheme/releases) link.
+Download the latest release by following [this](https://github.com/pcafrica/focustheme/releases) link.
 
 Instructions
 ============
@@ -49,7 +49,7 @@ For example:
 ```
 produces the following ice-blue color theme.
 
-![](https://github.com/elauksap/focustheme/blob/master/focus-demo/demo-titlepage-color.jpg)
+![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-titlepage-color.jpg)
 
 Customize the footline
 ----------------------
@@ -111,7 +111,7 @@ Contact information are available to registered users on my Github profile page.
 
 Contributors
 ============
-Focus was initially created and designed by [Pasquale Africa](https://github.com/elauksap).
+Focus was initially created and designed by [Pasquale Africa](https://github.com/pcafrica).
 
 The following people deserve appreciation and acknowledgment for improving the template with
 additions and modifications (in alphabetical order):
@@ -121,4 +121,4 @@ additions and modifications (in alphabetical order):
 - [SFr682k](https://github.com/SFr682k)
 - [Zortaniac](https://github.com/Zortaniac)
 
-A more detailed contribution list is found [here](https://github.com/elauksap/focus-beamertheme/graphs/contributors).
+A more detailed contribution list is found [here](https://github.com/pcafrica/focus-beamertheme/graphs/contributors).
