@@ -113,12 +113,6 @@ Contributors
 ============
 Focus was initially created and designed by [Pasquale Africa](https://github.com/pcafrica).
 
-The following people deserve appreciation and acknowledgment for improving the template with
-additions and modifications (in alphabetical order):
-
-- [max](https://github.com/imntl)
-- [MonsieurPi](https://github.com/MonsieurPi)
-- [SFr682k](https://github.com/SFr682k)
-- [Zortaniac](https://github.com/Zortaniac)
-
-A more detailed contribution list is found [here](https://github.com/pcafrica/focus-beamertheme/graphs/contributors).
+Many other people deserve appreciation and acknowledgment for improving the template with
+additions and modifications. Please find a detailed list of contributors
+[here](https://github.com/pcafrica/focus-beamertheme/graphs/contributors).
