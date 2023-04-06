@@ -13,12 +13,12 @@ Demo
 ----
 A full demo is available. Refer to `focus-demo.tex` and `focus-demo.pdf`.
 
-![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-titlepage.jpg)
-![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-subsectionpage.jpg)
-![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-typeset.jpg)
-![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-focus.jpg)
-![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-references.jpg)
-![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-appendix.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/main/focus-demo/demo-titlepage.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/main/focus-demo/demo-subsectionpage.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/main/focus-demo/demo-typeset.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/main/focus-demo/demo-focus.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/main/focus-demo/demo-references.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/main/focus-demo/demo-appendix.jpg)
 
 Download
 ========
@@ -49,7 +49,7 @@ For example:
 ```
 produces the following ice-blue color theme.
 
-![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-titlepage-color.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/main/focus-demo/demo-titlepage-color.jpg)
 
 Customize the footline
 ----------------------
