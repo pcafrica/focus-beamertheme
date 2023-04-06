@@ -13,16 +13,16 @@ Demo
 ----
 A full demo is available. Refer to `focus-demo.tex` and `focus-demo.pdf`.
 
-![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-titlepage.jpg)
-![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-subsectionpage.jpg)
-![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-typeset.jpg)
-![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-focus.jpg)
-![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-references.jpg)
-![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-appendix.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-titlepage.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-subsectionpage.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-typeset.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-focus.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-references.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-appendix.jpg)
 
 Download
 ========
-Download the latest release by following [this](https://github.com/pcafrica/focustheme/releases) link.
+Download the latest release by following [this](https://github.com/pcafrica/focus-beamertheme/releases) link.
 
 Instructions
 ============
@@ -49,7 +49,7 @@ For example:
 ```
 produces the following ice-blue color theme.
 
-![](https://github.com/pcafrica/focustheme/blob/master/focus-demo/demo-titlepage-color.jpg)
+![](https://github.com/pcafrica/focus-beamertheme/blob/master/focus-demo/demo-titlepage-color.jpg)
 
 Customize the footline
 ----------------------
@@ -95,7 +95,7 @@ This can be changed by using the option _nofirafonts_:
 \usetheme[nofirafonts]{focus}
 ```
 
-> **Warning**: if XeTeX returns an error about the font not being found, please follow the instructions at the [TeX Live Guide, section 3.4.4](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-330003.4.4). 
+> **Warning**: if XeTeX returns an error about the font not being found, please follow the instructions at the [TeX Live Guide, section 3.4.4](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-330003.4.4).
 
 License
 =======
