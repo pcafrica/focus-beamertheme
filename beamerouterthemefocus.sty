@@ -205,11 +205,6 @@
 % Empty footline.
 \defbeamertemplate{footline}{none}{}
 
-% Empty footline for noframenumbering.
-\defbeamertemplate{footline}{noframenumbering}{
-    \addtocounter{framenumber}{-1}
-}
-
 \DeclareOptionBeamer{numbering}{\def\beamer@focus@numbering{#1}}
 \ExecuteOptionsBeamer{numbering=progressbar}
 
@@ -278,7 +273,7 @@
 
 % Enable noframenumbering option.
 \define@key{beamerframe}{noframenumbering}[true]{%
-    \setbeamertemplate{footline}[noframenumbering]%
+    \addtocounter{framenumber}{-1}
     \setlength{\focus@pbar@height}{0cm}%
     \focus@calculatefootheight%
 }
